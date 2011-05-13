@@ -5,7 +5,8 @@ body {
     font-family: "Lucida Grande", sans-serif;
     font-size: small;
 }
-div, p {
+div, p, h1 {
+    font-size: 1em;
     padding: 1em;
     background-color: #fff;
     max-width: 35em;
