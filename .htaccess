@@ -1,4 +1,7 @@
+AddDefaultCharset UTF-8
+
 # Remove www. from hostname
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www.strftime.org$ [NC]
 RewriteRule ^(.*)$ http://strftime.org/$1 [R=301,L]
+
