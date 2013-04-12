@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python strftime reference</title>
+    <link rel="stylesheet" href="edify.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="python, strftime, reference">
+    <meta name="description" content="A quick reference for Python's strftime formatting directives.">
+    <meta name="author" content="@mccutchen">
+    <meta name="google-site-verification" content="S-bbcTBTJoPolBdOfvPhpJM-X3gxGVAcEXsuP6DvQq0">
+  </head>
+
+  <body>
+    <h1>Python's <code>strftime</code> directives</h1>
+
+    <p class="example"><strong>Note:</strong> Examples are based on
+      <code>{{example_date_repr}}</code>
+    </p>
+
+    <div class="reference">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <colgroup>
+          <col id="directive">
+          <col id="meaning">
+          <col id="example">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Meaning</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#directives}}
+            <tr>
+              <td><code>{{directive}}</code></td>
+              <td>{{meaning}}</td>
+              <td><code>{{example}}</code></td>
+            </tr>
+          {{/directives}}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="source"><strong>Source:</strong>
+      <a href="http://www.python.org/">Python</a>&#8217;s
+      <code><a href="http://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior">strftime</a></code>
+      documentation.</p>
+
+    <p class="explanation"><strong>Why?</strong> I need to use
+      Python&#8217;s <code>strftime</code> rarely enough that I can&#8217;t
+      remember it off the top of my head and never bookmark it but often
+      enough to be annoyed with having to Google &#8220;python strftime&#8221;
+      and then find the table above in the Python documentation.  So I decided
+      to put this reference page up.</p>
+
+    <p class="who"><strong>Who?</strong> This was slapped together on a whim
+      by <a href="https://twitter.com/mccutchen">Will McCutchen</a>, who is
+      just slouching on the shoulders of the awesome
+      <a href="http://docs.python.org/2/about.html">Python documentation team</a>.
+      The source code is <a href="https://github.com/mccutchen/strftime.org">on Github</a>
+      and pull requests are welcome!</p>
+
+    <p class="when"><strong>When?</strong> Last updated {{timestamp}}.</p>
+
+    <a href="https://github.com/mccutchen/strftime.org"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2498192-11']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
