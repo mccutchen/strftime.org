@@ -1,3 +1,4 @@
 .nodelete
 awstats-icon
 icon
+dist/*
