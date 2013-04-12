@@ -8,8 +8,7 @@ Assumptions:
 """
 
 import os
-from fabric.api import abort, cd, env, run, task
-
+from fabric.api import abort, env, local, run, task
 
 env.hosts = ['overloaded.org']
 env.use_ssh_config = True
@@ -25,10 +24,6 @@ def web_dir():
     return '~/domains/{}/web/public'.format(domain())
 
 
-def git_repo():
-    return 'git@github.com:mccutchen/{}.git'.format(domain())
-
-
 def dir_exists(dirname):
     cmd = '[ -d {} ]'.format(dirname)
     return run(cmd, warn_only=True, quiet=True).return_code == 0
@@ -42,30 +37,27 @@ def check_domain():
 
 
 @task
-def bootstrap():
-    """Ensures that the server has the domain set up and makes a clean
-    checkout of the site's source code and moves it into place.
-    """
+def deploy():
+    """Build and deploy a new version of the site."""
     check_domain()
-    if dir_exists(os.path.join(web_dir(), '.git')):
-        abort('Web directory already a git repo: {}'.format(web_dir()))
-
-    run('mkdir -p ~/tmp')
-    with cd('~/tmp'):
-        run('rm -rf repo')
-        run('git clone {} repo'.format(git_repo()))
-        run('mv repo/.git {}'.format(web_dir()))
-        run('rm -rf repo')
-
-    with cd(web_dir()):
-        run('rm -f index.*')
-
-    deploy()
+    build()
+    src = 'dist/'
+    dst = '{}:{}'.format(env.hosts[0], web_dir())
+    if not dst.endswith('/'):
+        dst = dst + '/'
+    local('rsync --verbose --progress --recursive --delete {} {}'.format(src, dst))
+    clean()
 
 
 @task
-def deploy(branch='master'):
-    """Deploy latest code in origin/master (or the specified branch)."""
-    check_domain()
-    with cd(web_dir()):
-        run('git fetch origin && git reset --hard origin/{}'.format(branch))
+def build():
+    """Build a new index.html page from the Python docs."""
+    clean()
+    local('cp -r resources dist')
+    local('./build.py > dist/index.html')
+
+
+@task
+def clean():
+    """Clean up after a build."""
+    local('rm -rf dist')

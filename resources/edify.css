@@ -1,23 +1,27 @@
 body {
     color: #333;
     background-color: #ccc;
-    margin: 0;
+    margin: 0 auto;
     font-family: "Lucida Grande", sans-serif;
     font-size: small;
+    max-width: 50em;
 }
 div, p, h1 {
     font-size: 1em;
     padding: 1em;
     background-color: #fff;
-    max-width: 35em;
-    margin: 1em auto;
+    margin: 1em 0;
 
     -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,.25);
     -moz-box-shadow: 2px 2px 2px rgba(0,0,0,.25);
     box-shadow: 2px 2px 2px rgba(0,0,0,.25);
 }
 
-td {
+code {
+    white-space: nowrap;
+}
+
+td, th {
     padding: .5em 1em;
     text-align: left;
     vertical-align: top;

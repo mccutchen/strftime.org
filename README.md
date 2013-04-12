@@ -1,12 +1,6 @@
-
 strftime.org
 ============
 
-Just a dumb quick reference.
+Just a dumb quick reference, built automatically from the [Python `strftime` docs][1].
 
-TODO
-----
-
- - Build this table automatically from the Python docs[1]
-
-[1] http://docs.python.org/library/datetime.html
+[1]: http://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior
