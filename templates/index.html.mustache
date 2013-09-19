@@ -33,8 +33,11 @@
       <code>{{example_date_repr}}</code>
     </p>
 
-    <p class="example">Test strftime string:<input type="text" id="tdemo" onBlur="updateField(this);"><span id="demo">Output appears here.</span>
+    <p class="example">Test strftime string:<input type="text" id="tdemo"><span id="demo">Output appears here.</span>
     </p>
+    <script type="text/JavaScript">
+    setInterval(function() { updateField(document.getElementById("tdemo")); }, 100);
+    </script>
 
     <div class="reference">
       <table cellpadding="0" cellspacing="0" border="0">
