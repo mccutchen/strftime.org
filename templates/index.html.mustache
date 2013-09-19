@@ -21,6 +21,7 @@
                 val = val.replace(newval, document.getElementById("f" + newval).innerHTML);
             }
         }
+        val = val.replace("%%", "%");
         document.getElementById("demo").innerHTML = val;
     }
     </script>
