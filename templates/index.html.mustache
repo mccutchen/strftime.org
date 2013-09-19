@@ -8,6 +8,22 @@
     <meta name="description" content="A quick reference for Python's strftime formatting directives.">
     <meta name="author" content="@mccutchen">
     <meta name="google-site-verification" content="S-bbcTBTJoPolBdOfvPhpJM-X3gxGVAcEXsuP6DvQq0">
+    <script type="text/JavaScript">
+    function updateField(field) {
+        var val = field.value;
+        var splitval = val.split("%");
+        for (var i in val) {
+            if (val[i].charAt(0) == "%") {
+                continue;
+            }
+            var newval = "%" + val[i].charAt(0);
+            if (document.contains(document.getElementById(newval))) {
+                val = val.replace(newval, document.getElementById("f" + newval).innerHTML);
+            }
+        }
+        document.getElementById("demo").innerHTML = val;
+    }
+    </script>
   </head>
 
   <body>
@@ -15,6 +31,9 @@
 
     <p class="example"><strong>Note:</strong> Examples are based on
       <code>{{example_date_repr}}</code>
+    </p>
+
+    <p class="example">Test strftime string:<input type="text" id="tdemo" onBlur="updateField(this);"><span id="demo">Output appears here.</span>
     </p>
 
     <div class="reference">
@@ -34,9 +53,9 @@
         <tbody>
           {{#directives}}
             <tr>
-              <td><code>{{directive}}</code></td>
+              <td><code id="{{directive}}">{{directive}}</code></td>
               <td>{{meaning}}</td>
-              <td><code>{{example}}</code></td>
+              <td><code id="f{{directive}}">{{example}}</code></td>
             </tr>
           {{/directives}}
         </tbody>
