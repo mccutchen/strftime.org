@@ -10,7 +10,7 @@
     <meta name="google-site-verification" content="S-bbcTBTJoPolBdOfvPhpJM-X3gxGVAcEXsuP6DvQq0">
     <script type="text/JavaScript">
     function updateField(field) {
-        var val = field.value;
+        var val = field.value + "      "; // The spaces are to fix a weird bug where the last few directives aren't replaced. Very strange.
         var splitval = val.split("%");
         for (var i in val) {
             if (val[i].charAt(0) == "%") {
