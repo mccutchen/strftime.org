@@ -7,45 +7,31 @@ Assumptions:
  * The github repo for the site has the same name as well
 """
 
-import os
-from fabric.api import abort, env, local, run, task
+from fabric.api import env, local, run, task
 
-env.hosts = ['overloaded.org']
+env.hosts = ['mccutch.org']
 env.use_ssh_config = True
 
 
-def domain():
-    return os.path.basename(os.path.dirname(__file__))
-
-
-def web_dir():
-    if domain() == 'overloaded.org':
-        return '~/web/public'
-    return '~/domains/{}/web/public'.format(domain())
-
-
-def dir_exists(dirname):
-    cmd = '[ -d {} ]'.format(dirname)
-    return run(cmd, warn_only=True, quiet=True).return_code == 0
+TARGET_DIR = '/var/www/strftime.org'
 
 
 @task
-def check_domain():
-    """Check to see whether this domain has been set up on the server side."""
-    if not dir_exists(web_dir()):
-        abort('Domain {} not configured'.format(domain()))
+def ensure_target():
+    run('mkdir -p {}'.format(TARGET_DIR))
 
 
 @task
 def deploy():
     """Build and deploy a new version of the site."""
-    check_domain()
     build()
     src = 'dist/'
-    dst = '{}:{}'.format(env.hosts[0], web_dir())
+    dst = '{}:{}'.format(env.hosts[0], TARGET_DIR)
     if not dst.endswith('/'):
         dst = dst + '/'
-    local('rsync --verbose --progress --recursive --delete {} {}'.format(src, dst))
+    cmd = 'rsync --verbose --progress --recursive --delete {} {}'.format(
+        src, dst)
+    local(cmd)
     clean()
 
 
