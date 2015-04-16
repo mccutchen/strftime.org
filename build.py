@@ -14,7 +14,7 @@ def main():
     soup = BeautifulSoup(body)
 
     table = soup.find(id='strftime-and-strptime-behavior').find('table')
-    example_date = datetime.datetime(2013, 12, 25, 17, 15, 30)
+    example_date = datetime.datetime(2013, 9, 3, 9, 6, 5)
 
     directives = []
     for row in table.select('tbody > tr'):
@@ -26,8 +26,27 @@ def main():
         directives.append({
             'directive': directive,
             'meaning': meaning,
-            'example': example,
+            'example': example
         })
+
+        # also add the non zero padded version for some of them
+        # http://stackoverflow.com/questions/28894172/why-does-d-or-e-remove-the-leading-space-or-zero
+
+        exclude = ['%f', '%y']
+        if 'zero-padded' in meaning and directive not in exclude:
+            non_zero_padding_decimal = directive.replace("%", "%-")
+            non_zero_padding_example = example_date.strftime(
+                non_zero_padding_decimal
+            )
+
+            non_zero_padding_meaning = (
+                meaning.replace("zero-padded", "") + " (Platform specific)")
+
+            directives.append({
+                'directive': non_zero_padding_decimal,
+                'meaning': non_zero_padding_meaning,
+                'example': non_zero_padding_example
+            })
 
     template = open('templates/index.html.mustache').read()
     context = {
