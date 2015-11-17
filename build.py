@@ -14,7 +14,7 @@ def main():
     soup = BeautifulSoup(body)
 
     table = soup.find(id='strftime-and-strptime-behavior').find('table')
-    example_date = datetime.datetime(2013, 9, 3, 7, 6, 5)
+    example_date = datetime.datetime(2013, 9, 30, 7, 6, 5)
 
     directives = []
     for row in table.select('tbody > tr'):
