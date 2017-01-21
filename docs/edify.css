@@ -30,3 +30,15 @@ td, th {
 tr:nth-child(even) {
     background-color: #eee;
 }
+
+input {
+  width: 80%;
+  padding: .5em 1em;
+  margin: 1em 0;
+}
+
+.output {
+  font-size: 1.5em;
+  padding: 1em;
+  margin: 1em 0;
+}
