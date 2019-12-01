@@ -201,7 +201,7 @@
       The full set of format codes supported varies across platforms, because Python calls the platform C library's strftime() function, and platform variations are common. To see the full set of format codes supported on your platform, consult the <a href="http://man7.org/linux/man-pages/man3/strftime.3.html" target="_blank"><code>strftime(3)</code> documentation</a>.
       <br />
       <br />
-      The Python docs contain all the format codes that the C standard (1989 version) requires, and these work on all platforms with a standard C implementation. Note that the 1999 version of the C standard added additional format codes. These include codes for non-zero-padded numbers, that can be obtained by appending a dash (-) after the percent (%) sign.
+      The Python docs contain all the format codes that the C standard (1989 version) requires, and these work on all platforms with a standard C implementation. Note that the 1999 version of the C standard added additional format codes. These include codes for non-zero-padded numbers, that can be obtained by appending a dash (-) (UNIX) or hash (#) (Windows) after the percent (%) sign.
     </p>
 
     <p class="explanation"><strong>Why?</strong> I need to use
