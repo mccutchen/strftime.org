@@ -1,5 +1,1 @@
-.nodelete
-awstats-icon
-icon
-dist/*
-venv/*
+.venv/*

@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import datetime
 import sys
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 
 from bs4 import BeautifulSoup
 import pystache
@@ -10,8 +10,8 @@ import pystache
 
 def main():
     url = 'http://docs.python.org/2/library/datetime.html'
-    body = urllib2.urlopen(url).read()
-    soup = BeautifulSoup(body)
+    body = urllib.request.urlopen(url).read()
+    soup = BeautifulSoup(body, features="html.parser")
 
     table = soup.find(id='strftime-and-strptime-behavior').find('table')
     example_date = datetime.datetime(2013, 9, 30, 7, 6, 5)
@@ -55,7 +55,7 @@ def main():
         'directives': directives,
         'timestamp': datetime.datetime.utcnow().strftime('%Y-%m-%d'),
     }
-    print pystache.render(template, context).encode('utf8')
+    print(pystache.render(template, context))
     return 0
 
 

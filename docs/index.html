@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python strftime reference</title>
+    <link rel="stylesheet" href="edify.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="python, strftime, reference">
+    <meta name="description" content="A quick reference for Python's strftime formatting directives.">
+    <meta name="author" content="@mccutchen">
+  </head>
+
+  <body>
+    <h1>Python's <code>strftime</code> directives</h1>
+
+    <p class="example"><strong>Note:</strong> Examples are based on
+      <code>datetime.datetime(2013, 9, 30, 7, 6, 5)</code>
+    </p>
+
+    <div class="reference">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <colgroup>
+          <col id="directive">
+          <col id="meaning">
+          <col id="example">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Meaning</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><code>%a</code></td>
+              <td>Weekday as locale’s abbreviated name.</td>
+              <td><code>Mon</code></td>
+            </tr>
+            <tr>
+              <td><code>%A</code></td>
+              <td>Weekday as locale’s full name.</td>
+              <td><code>Monday</code></td>
+            </tr>
+            <tr>
+              <td><code>%w</code></td>
+              <td>Weekday as a decimal number, where 0 is Sunday and 6 is Saturday.</td>
+              <td><code>1</code></td>
+            </tr>
+            <tr>
+              <td><code>%d</code></td>
+              <td>Day of the month as a zero-padded decimal number.</td>
+              <td><code>30</code></td>
+            </tr>
+            <tr>
+              <td><code>%-d</code></td>
+              <td>Day of the month as a  decimal number. (Platform specific)</td>
+              <td><code>30</code></td>
+            </tr>
+            <tr>
+              <td><code>%b</code></td>
+              <td>Month as locale’s abbreviated name.</td>
+              <td><code>Sep</code></td>
+            </tr>
+            <tr>
+              <td><code>%B</code></td>
+              <td>Month as locale’s full name.</td>
+              <td><code>September</code></td>
+            </tr>
+            <tr>
+              <td><code>%m</code></td>
+              <td>Month as a zero-padded decimal number.</td>
+              <td><code>09</code></td>
+            </tr>
+            <tr>
+              <td><code>%-m</code></td>
+              <td>Month as a  decimal number. (Platform specific)</td>
+              <td><code>9</code></td>
+            </tr>
+            <tr>
+              <td><code>%y</code></td>
+              <td>Year without century as a zero-padded decimal number.</td>
+              <td><code>13</code></td>
+            </tr>
+            <tr>
+              <td><code>%Y</code></td>
+              <td>Year with century as a decimal number.</td>
+              <td><code>2013</code></td>
+            </tr>
+            <tr>
+              <td><code>%H</code></td>
+              <td>Hour (24-hour clock) as a zero-padded decimal number.</td>
+              <td><code>07</code></td>
+            </tr>
+            <tr>
+              <td><code>%-H</code></td>
+              <td>Hour (24-hour clock) as a  decimal number. (Platform specific)</td>
+              <td><code>7</code></td>
+            </tr>
+            <tr>
+              <td><code>%I</code></td>
+              <td>Hour (12-hour clock) as a zero-padded decimal number.</td>
+              <td><code>07</code></td>
+            </tr>
+            <tr>
+              <td><code>%-I</code></td>
+              <td>Hour (12-hour clock) as a  decimal number. (Platform specific)</td>
+              <td><code>7</code></td>
+            </tr>
+            <tr>
+              <td><code>%p</code></td>
+              <td>Locale’s equivalent of either AM or PM.</td>
+              <td><code>AM</code></td>
+            </tr>
+            <tr>
+              <td><code>%M</code></td>
+              <td>Minute as a zero-padded decimal number.</td>
+              <td><code>06</code></td>
+            </tr>
+            <tr>
+              <td><code>%-M</code></td>
+              <td>Minute as a  decimal number. (Platform specific)</td>
+              <td><code>6</code></td>
+            </tr>
+            <tr>
+              <td><code>%S</code></td>
+              <td>Second as a zero-padded decimal number.</td>
+              <td><code>05</code></td>
+            </tr>
+            <tr>
+              <td><code>%-S</code></td>
+              <td>Second as a  decimal number. (Platform specific)</td>
+              <td><code>5</code></td>
+            </tr>
+            <tr>
+              <td><code>%f</code></td>
+              <td>Microsecond as a decimal number, zero-padded on the left.</td>
+              <td><code>000000</code></td>
+            </tr>
+            <tr>
+              <td><code>%z</code></td>
+              <td>UTC offset in the form +HHMM or -HHMM (empty string if the the object is naive).</td>
+              <td><code></code></td>
+            </tr>
+            <tr>
+              <td><code>%Z</code></td>
+              <td>Time zone name (empty string if the object is naive).</td>
+              <td><code></code></td>
+            </tr>
+            <tr>
+              <td><code>%j</code></td>
+              <td>Day of the year as a zero-padded decimal number.</td>
+              <td><code>273</code></td>
+            </tr>
+            <tr>
+              <td><code>%-j</code></td>
+              <td>Day of the year as a  decimal number. (Platform specific)</td>
+              <td><code>273</code></td>
+            </tr>
+            <tr>
+              <td><code>%U</code></td>
+              <td>Week number of the year (Sunday as the first day of the week) as a zero padded decimal number. All days in a new year preceding the first Sunday are considered to be in week 0.</td>
+              <td><code>39</code></td>
+            </tr>
+            <tr>
+              <td><code>%W</code></td>
+              <td>Week number of the year (Monday as the first day of the week) as a decimal number. All days in a new year preceding the first Monday are considered to be in week 0.</td>
+              <td><code>39</code></td>
+            </tr>
+            <tr>
+              <td><code>%c</code></td>
+              <td>Locale’s appropriate date and time representation.</td>
+              <td><code>Mon Sep 30 07:06:05 2013</code></td>
+            </tr>
+            <tr>
+              <td><code>%x</code></td>
+              <td>Locale’s appropriate date representation.</td>
+              <td><code>09/30/13</code></td>
+            </tr>
+            <tr>
+              <td><code>%X</code></td>
+              <td>Locale’s appropriate time representation.</td>
+              <td><code>07:06:05</code></td>
+            </tr>
+            <tr>
+              <td><code>%%</code></td>
+              <td>A literal &#x27;%&#x27; character.</td>
+              <td><code>%</code></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="source"><strong>Source:</strong>
+      <a href="http://www.python.org/">Python</a>&#8217;s
+      <code><a href="http://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior" target="_blank">strftime</a></code>
+      documentation.
+    </p>
+
+    <a name="platforms"></a>
+    <p class="platforms"><strong>Platform specific directives:</strong>
+      The full set of format codes supported varies across platforms, because Python calls the platform C library's strftime() function, and platform variations are common. To see the full set of format codes supported on your platform, consult the <a href="http://man7.org/linux/man-pages/man3/strftime.3.html" target="_blank"><code>strftime(3)</code> documentation</a>.
+      <br />
+      <br />
+      The Python docs contain all the format codes that the C standard (1989 version) requires, and these work on all platforms with a standard C implementation. Note that the 1999 version of the C standard added additional format codes. These include codes for non-zero-padded numbers, that can be obtained by appending a dash (-) after the percent (%) sign.
+    </p>
+
+    <p class="explanation"><strong>Why?</strong> I need to use
+      Python&#8217;s <code>strftime</code> rarely enough that I can&#8217;t
+      remember it off the top of my head and never bookmark it but often
+      enough to be annoyed with having to Google &#8220;python strftime&#8221;
+      and then find the table above in the Python documentation.  So I decided
+      to put this reference page up.</p>
+
+    <p class="who"><strong>Who?</strong> This was slapped together on a whim
+      by <a href="https://twitter.com/mccutchen" target="_blank">Will McCutchen</a>, who is
+      just slouching on the shoulders of the awesome
+      <a href="http://docs.python.org/2/about.html" target="_blank">Python documentation team</a>.
+      The source code is <a href="https://github.com/mccutchen/strftime.org" target="_blank">on Github</a>
+      and pull requests are welcome!</p>
+
+    <p class="when"><strong>When?</strong> Last updated 2019-12-01.</p>
+
+    <p class="whatelse"><strong>What else?</strong>
+      You might also like <a href="https://pyformat.info/" target="_blank">PyFormat</a>
+      by <a href="https://twitter.com/ulope" target="_blank">Ulrich Petri</a>
+      and <a href="https://zerokspot.com/weblog/" target="_blank">Horst Gutmann</a>.</p>
+
+    <a href="https://github.com/mccutchen/strftime.org" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+  </body>
+</html>
+
