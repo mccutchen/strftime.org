@@ -20,6 +20,15 @@ div, p, h1 {
 code {
     white-space: nowrap;
 }
+.pre {
+    display: block;
+    line-height: 1.5;
+    white-space: pre-line;
+    margin: 1em 0 1em 1.5em;
+}
+.pre:first-line { /* https://stackoverflow.com/a/14948580 */
+    line-height: 0;
+}
 
 td, th {
     padding: .5em 1em;

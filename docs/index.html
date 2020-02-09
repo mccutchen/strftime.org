@@ -12,8 +12,18 @@
   <body>
     <h1>Python's <code>strftime</code> directives</h1>
 
-    <p class="example"><strong>Note:</strong> Examples are based on
-      <code>datetime.datetime(2013, 9, 30, 7, 6, 5)</code>
+    <p>
+        <strong>Example:</strong>
+
+        <code class="pre">
+            >>> import datetime
+            >>> d = datetime.datetime(2013, 9, 30, 7, 6, 5)
+            >>> d.strftime('%H:%M:%S on %A %B %d, %Y')
+            '07:06:05 on Monday September 30, 2013'
+        </code>
+
+        <strong>Note:</strong> The examples below are based on
+        <code>datetime.datetime(2013, 9, 30, 7, 6, 5)</code>.
     </p>
 
     <div class="reference">
