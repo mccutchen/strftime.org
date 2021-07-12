@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import datetime
+import os
 import sys
 import urllib.request, urllib.error, urllib.parse
 
@@ -48,7 +49,7 @@ def main():
                 'example': non_zero_padding_example
             })
 
-    template = open('templates/index.html.mustache').read()
+    template = open(os.path.join('templates', 'index.html.mustache')).read()
     context = {
         'example_date': str(example_date),
         'example_date_repr': repr(example_date),
