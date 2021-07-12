@@ -1,0 +1,6 @@
+# Top level dependencies
+#
+# Use make update-deps to update requirements.txt with pinned dependencies.
+
+beautifulsoup4
+pystache
