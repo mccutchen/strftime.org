@@ -10,11 +10,11 @@ import pystache
 
 
 def main():
-    url = 'http://docs.python.org/2/library/datetime.html'
+    url = 'https://docs.python.org/3/library/datetime.html'
     body = urllib.request.urlopen(url).read()
     soup = BeautifulSoup(body, features="html.parser")
 
-    table = soup.find(id='strftime-and-strptime-behavior').find('table')
+    table = soup.find(id='strftime-and-strptime-format-codes').find('table')
     example_date = datetime.datetime(2013, 9, 8, 7, 6, 5)
 
     directives = []
