@@ -1,32 +1,69 @@
+:root {
+    --background-color: #fff;
+    --text-color: 53, 53, 53;
+    --text-background: #f9f9f9;
+    --link-color: 255, 13, 134;
+}
+
+html {
+    padding: 1rem;
+}
+
 body {
-    color: #333;
-    background-color: #ccc;
+    background-color: var(--background-color);
+    color: rgb(var(--text-color));
     margin: 0 auto;
-    font-family: "Lucida Grande", sans-serif;
-    font-size: small;
-    max-width: 50em;
-}
-div, p, h1 {
-    font-size: 1em;
-    padding: 1em;
-    background-color: #fff;
-    margin: 1em 0;
-
-    -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-    -moz-box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-    box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+    max-width: 50rem;
+    /* System Fonts as used by Medium and WordPress */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-code {
-    white-space: nowrap;
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+table {
+    margin: 0 -1rem;
 }
 
 td, th {
-    padding: .5em 1em;
+    padding: .5rem 1rem;
     text-align: left;
     vertical-align: top;
 }
 
 tr:nth-child(even) {
-    background-color: #eee;
+    background-color: var(--text-background);
+}
+
+table tr td:nth-child(1) {
+    /* first column */
+    text-align: right;
+}
+
+footer {
+    margin-top: 2rem;
+    text-align: right;
+    font-size: smaller;
+    font-style: italic;
+    color: rgba(var(--text-color), 0.5);
+}
+
+a, a:visited {
+    color: rgb(var(--link-color));
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: rgba(var(--link-color), 0.1);
+}
+
+code {
+    /* Monospace system fonts as used by GitHub */
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
