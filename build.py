@@ -7,6 +7,7 @@ import urllib.request, urllib.error, urllib.parse
 
 from bs4 import BeautifulSoup
 import pystache
+import pytz
 
 
 def main():
@@ -15,7 +16,7 @@ def main():
     soup = BeautifulSoup(body, features="html.parser")
 
     table = soup.find(id='strftime-and-strptime-format-codes').find('table')
-    example_date = datetime.datetime(2013, 9, 8, 7, 6, 5)
+    example_date = datetime.datetime(2013, 9, 8, 7, 6, 5, tzinfo=pytz.utc)
 
     directives = []
     for row in table.select('tbody > tr'):
@@ -52,9 +53,8 @@ def main():
     template = open(os.path.join('templates', 'index.html.mustache')).read()
     context = {
         'example_date': str(example_date),
-        'example_date_repr': repr(example_date),
         'directives': directives,
-        'timestamp': datetime.datetime.utcnow().strftime('%Y-%m-%d'),
+        'timestamp': datetime.datetime.utcnow().strftime('%c'),
     }
     print(pystache.render(template, context))
     return 0

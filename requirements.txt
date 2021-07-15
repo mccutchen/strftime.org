@@ -8,5 +8,7 @@ beautifulsoup4==4.9.3
     # via -r requirements.in
 pystache==0.5.4
     # via -r requirements.in
+pytz==2021.1
+    # via -r requirements.in
 soupsieve==2.2.1
     # via beautifulsoup4
