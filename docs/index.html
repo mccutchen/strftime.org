@@ -9,6 +9,7 @@
   <meta name="keywords" content="python, strftime, reference, cheatsheet">
   <meta name="description" content="A quick reference for Python's strftime formatting directives.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>">
 </head>
 
 <body>
@@ -138,7 +139,7 @@
         <tr>
           <td><code>%f</code></td>
           <td><code>000000</code></td>
-          <td>Microsecond as a decimal number, zero-padded on the left.</td>
+          <td>Microsecond as a decimal number, zero-padded to 6 digits.</td>
         </tr>
         <tr>
           <td><code>%z</code></td>
@@ -163,12 +164,22 @@
         <tr>
           <td><code>%U</code></td>
           <td><code>36</code></td>
-          <td>Week number of the year (Sunday as the first day of the week) as a zero padded decimal number. All days in a new year preceding the first Sunday are considered to be in week 0.</td>
+          <td>Week number of the year (Sunday as the first day of the week) as a zero-padded decimal number. All days in a new year preceding the first Sunday are considered to be in week 0.</td>
+        </tr>
+        <tr>
+          <td><code>%-U</code></td>
+          <td><code>36</code></td>
+          <td>Week number of the year (Sunday as the first day of the week) as a  decimal number. All days in a new year preceding the first Sunday are considered to be in week 0. (Platform specific)</td>
         </tr>
         <tr>
           <td><code>%W</code></td>
           <td><code>35</code></td>
-          <td>Week number of the year (Monday as the first day of the week) as a decimal number. All days in a new year preceding the first Monday are considered to be in week 0.</td>
+          <td>Week number of the year (Monday as the first day of the week) as a zero-padded decimal number. All days in a new year preceding the first Monday are considered to be in week 0.</td>
+        </tr>
+        <tr>
+          <td><code>%-W</code></td>
+          <td><code>35</code></td>
+          <td>Week number of the year (Monday as the first day of the week) as a  decimal number. All days in a new year preceding the first Monday are considered to be in week 0. (Platform specific)</td>
         </tr>
         <tr>
           <td><code>%c</code></td>
@@ -223,7 +234,7 @@
     the interactive <a href="https://www.strfti.me/">strfti.me</a>.</p>
 
   <footer>
-    <p>Last updated Thu Jul 15 16:02:31 2021.</p>
+    <p>Last updated Sat May  6 19:34:32 2023.</p>
   </footer>
 </body>
 
